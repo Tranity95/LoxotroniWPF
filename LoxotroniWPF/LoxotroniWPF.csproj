@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="american.png" />
+    <None Remove="arrow.png" />
+    <None Remove="bag.png" />
+    <None Remove="e6alo.png" />
+    <None Remove="square.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="american.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="arrow.png" />
+    <Resource Include="bag.png" />
+    <Resource Include="e6alo.png" />
+    <Resource Include="square.jpg" />
+  </ItemGroup>
+
+</Project>
