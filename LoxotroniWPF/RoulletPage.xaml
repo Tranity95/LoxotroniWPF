@@ -31,8 +31,8 @@
         <StackPanel Grid.ColumnSpan="5" Grid.Row="1">
             <TextBlock FontSize="30" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="Добро пожаловать в Casinity95!"/>
             <TextBlock FontSize="30" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="Выберите рулетку:"/>
-            <Button Width="230" Margin="5" FontFamily="Bahnschrift" FontSize="20" Content="Колесо фортуны" Click="ClassicRoulette" />
-            <Button Width="230" Margin="5" FontFamily="Bahnschrift" FontSize="20" Content="Американская рулетка" Click="WheelRoulette"/>
+            <Button Width="230" Margin="5" FontFamily="Bahnschrift" FontSize="20" Content="Колесо фортуны" Click="WheelRoulette" />
+            <Button Width="230" Margin="5" FontFamily="Bahnschrift" FontSize="20" Content="Американская рулетка" Click="ClassicRoulette"/>
         </StackPanel>
         <Image Grid.Row="1" Stretch="Fill" Source="e6alo.png"/>
         <Image Grid.Row="1" Grid.Column="5" Stretch="Fill" Source="e6alo.png"/>

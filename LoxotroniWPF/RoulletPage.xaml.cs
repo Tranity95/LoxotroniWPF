@@ -38,7 +38,9 @@ namespace LoxotroniWPF
 
         private void WheelRoulette(object sender, RoutedEventArgs e)
         {
-            
+            Wheel wheel = new Wheel(User);
+            wheel.Show();
+            Close();
         }
 
         private void ClassicRoulette(object sender, RoutedEventArgs e)

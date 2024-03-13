@@ -48,8 +48,6 @@ namespace LoxotroniWPF.API
         }
         public async Task<UserDTO> Classic(string color, decimal stake, UserDTO user, string winColor)
         {
-            using (var client = new HttpClient())
-            {
                 var classicWheel = new ClassicWheel
                 {
                     Stake = stake,
@@ -66,7 +64,24 @@ namespace LoxotroniWPF.API
                 }
                 var answerUser = JsonConvert.DeserializeObject<UserDTO>(await response.Content.ReadAsStringAsync());
                 return answerUser;
+        }
+        public async Task<UserDTO> Wheel(decimal stake, UserDTO user, string thing)
+        {
+            var wheeel = new Wheeel
+            {
+                Stake = stake,
+                User = user,
+                Thing = thing
+            };
+            var jsonContent = JsonConvert.SerializeObject(wheeel);
+            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await httpClient.PutAsync("Roulette/Wheel", httpContent);
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Что-то пошло не так");
             }
+            var answerUser = JsonConvert.DeserializeObject<UserDTO>(await response.Content.ReadAsStringAsync());
+            return answerUser;
         }
 
         public async Task<UserDTO> GetUser(int id)
